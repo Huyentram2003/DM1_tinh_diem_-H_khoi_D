@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh-diem-DH-khoi-D</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Môn Toán</td>
+        <td><input style="width: 50px" type="text" id="s1" ></td>
+    </tr>
+    <tr>
+        <td>Môn Văn</td>
+        <td><input style="width: 50px" type="text" id="s2" ></td>
+    </tr>
+    <tr>
+        <td>Môn Anh</td>
+        <td><input style="width: 50px" type="text" id="s3" ></td>
+    </tr>
+    <tr>
+        <td>Khu Vực</td>
+        <td>
+            <select id="s4" >
+                <option value="0.75"> KV1 </option>
+         6       <option value="0.5"> KV2-NT </option>
+                <option value="0.25"> KV2 </option>
+                <option value="0"> KV3 </option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<td><input onclick="KQ()" type="button" value="Tính Điểm"></td>
+
+<h1 style="color: red" id="s5"></h1>
+
+<script>
+    //có 2 cách nhập data => cách 1
+    let m
+    function auto() {
+        let t = document.getElementById('s4').value;
+        console.log('giá trị ', t )
+        switch (t) {
+            case 'KV1':
+                m = 0.75
+                break;
+            case 'KV2-NT':
+                m = 0.5
+                break;
+            case 'KV2':
+                m = 0.25
+                break;
+            case 'kv3':
+                m = 0
+                break;
+        }
+    }
+// ĐÃ BỊ LỖI
+//     function KQ() {
+//         let a = document.getElementById('s1').value;
+//         let x = parseFloat(a)
+//         let b = document.getElementById('s2').value;
+//         let y = parseFloat(b)
+//         let c = document.getElementById('s3').value;
+//         let z = parseFloat(c)
+//         d = x + y + z + m ;
+//         console.log('gia tri ', d )
+//         document.getElementById('s5').innerHTML = ' tổng điểm ĐH khối D bạn là : ' + d ;
+//     }
+// CÁCH 2
+    function KQ() {
+        let toan = + document.getElementById('s1').value;
+        let van = + document.getElementById('s2').value;
+        let anh = + document.getElementById('s3').value;
+        let khuVuc = + document.getElementById('s4').value;
+        console.log('khu vuc ' , khuVuc)
+        let d = toan + van + anh + khuVuc ;
+        document.getElementById('s5').innerHTML = ' tổng điểm ĐH khối D bạn là : ' + d ;
+    }
+</script>
+</body>
+</html>
